@@ -124,6 +124,9 @@ RUN apt-get install -y vim git
 RUN pip install jupyter_kernel_gateway
 EXPOSE 8888
 ```
+Create an image from this docker file (give it any name):
+
+`docker build -t tensor_atom .`
 
 Then create a container of the image, ensuring to add the port number and a bash shell:
 
@@ -139,7 +142,7 @@ Finally within the bash shell run this command to allow a connection from atom t
 
 Leave the command runnning as long as you want to use Hydrogen. If you `<Ctrl-C>` from the command the remote Kernel will close and hydrogen will not be able to function.
 
-If you want to use the Docker container, start the `tensor_root` container instead, and make any needed changes from there.
+If you want to use the Docker container to run the whole program, start the `tensor_root`/`tensot_gpu` container instead, and make any needed changes from there.
 
 
 ### Connect Hydrogen to the remote kernel
